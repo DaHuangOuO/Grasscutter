@@ -9,8 +9,8 @@ public class PacketGetShopmallDataRsp extends BasePacket {
 	public PacketGetShopmallDataRsp() {
 		super(PacketOpcodes.GetShopmallDataRsp);
 
-		GetShopmallDataRsp proto = GetShopmallDataRsp.newBuilder().build();
-		
-		this.setData(proto);
+		GetShopmallDataRsp.Builder proto = GetShopmallDataRsp.newBuilder();
+		proto.addShopTypeList(1001);
+		this.setData(proto.build());
 	}
 }
